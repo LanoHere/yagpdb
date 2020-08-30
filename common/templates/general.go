@@ -18,7 +18,7 @@ import (
 )
 
 // dictionary creates a map[string]interface{} from the given parameters by
-// walking the parameters and treating them as key-value pairs.  The number
+// walking the parametedrs and treating them as key-value pairs.  The number
 // of parameters must be even.
 func Dictionary(values ...interface{}) (Dict, error) {
 	if len(values)%2 != 0 {
