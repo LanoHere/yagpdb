@@ -3,9 +3,13 @@ FROM golang:stretch as builder
 # Uncomment during development
 COPY . github.com/LanoHere/yagpdb
 
-WORKDIR /appbuild/yagpdb/cmd/yagpdb
+WORKDIR $GOPATH/src
 
-RUN CGO_ENABLED=0 GOOS=linux go build -v
+RUN go get -d -v \
+  github.com/jonas747/yagpdb/cmd/yagpdb
+RUN CGO_ENABLED=0 GOOS=linux go install -v \
+  github.com/jonas747/yagpdb/cmd/yagpdb
+
 
 FROM alpine:latest
 
