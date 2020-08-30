@@ -1,7 +1,7 @@
 FROM golang:stretch as builder
 
 # Uncomment during development
-COPY . /appbuild/yagpdb
+COPY . github.com/LanoHere/yagpdb
 
 WORKDIR /appbuild/yagpdb/cmd/yagpdb
 
